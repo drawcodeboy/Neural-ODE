@@ -30,6 +30,7 @@ if args.adjoint:
 else:
     from torchdiffeq import odeint
 
+#==============Residual Block==============#
 
 def conv3x3(in_planes, out_planes, stride=1):
     """3x3 convolution with padding"""
@@ -72,6 +73,7 @@ class ResBlock(nn.Module):
 
         return out + shortcut
 
+#==============ODE Block==============#
 
 class ConcatConv2d(nn.Module):
 
@@ -133,6 +135,7 @@ class ODEBlock(nn.Module):
     def nfe(self, value):
         self.odefunc.nfe = value
 
+#==============Utility Functions==============#
 
 class Flatten(nn.Module):
 
@@ -301,6 +304,7 @@ if __name__ == '__main__':
             ResBlock(64, 64, stride=2, downsample=conv1x1(64, 64, 2)),
         ]
 
+    # feature_layers 여기가 Residual Block이냐, ODE Block이냐 차이다.
     feature_layers = [ODEBlock(ODEfunc(64))] if is_odenet else [ResBlock(64, 64) for _ in range(6)]
     fc_layers = [norm(64), nn.ReLU(inplace=True), nn.AdaptiveAvgPool2d((1, 1)), Flatten(), nn.Linear(64, 10)]
 
