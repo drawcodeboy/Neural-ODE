@@ -1,0 +1,20 @@
+expr: Test ODE-Net (MNIST)
+
+device: &device cuda:0
+parallel: false
+
+data:
+  dataset: MNIST
+  root: data/
+  download: True
+  mode: test
+
+model:
+  name: ODENet
+
+hyperparameters:
+  batch_size: 32
+
+save:
+  weights_path: saved/weights
+  weights_filename: odenet_mnist.epochs_020.pth
