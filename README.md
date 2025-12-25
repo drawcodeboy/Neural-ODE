@@ -25,7 +25,7 @@ pip install -r requirements.txt
     
     ➡️ <b>ODE Solver 간 차이를 공부해볼 것.</b>
 
-* 마지막으로, 논문과 달라진 실험 결과를 기반으로 해석을 해봤다. 내가 수행한 실험의 결과가 맞다고 가정한다. 우선, 거의 차이가 없는 소폭의 차이인 점을 인정하겠으나 이 부분을 주요하게 다루었다. Neural ODE 기반 모델은 ResNet보다 성능이 낮은 것으로 나타났다. 즉, 'Residual Networks를 무한에 가까운 레이어 수로 구성한 듯한 착각을 일으킴으로써, 성능의 개선을 유도한다.' 이건 틀렸다고 볼 수 있다. 이를 더 강하게 주장하기 위해 Neural ODE 기반 네트워크 실험이 Block을 하나만 사용한 것에 기인하여 Residual Block을 하나로만 구성한 ResNet 실험을 수행했다. 그 결과, ResNet (1 Block)과 ODE-Net(RK, explicit)의 성능이 유사하며, 앞서 언급한 주장이 틀렸음을 뒷받침한다. 그래서, 만약에 어떤 연구를 수행하던 도중 성능 개선을 deeper nerual network로 이끌어내기 위해 Neural ODE를 사용하는 전략은 적절하지 않을 수도 있다. (물론, 이런 naive한 접근법도 벌써 10년이 넘었다.) 그래서, Neural ODE는 기존 문제에 대한 접근법의 대안을 제안하는 게 contribution은 아니다. 다만, Neural ODE를 통해서 기존에 풀지 못 했던 문제 (irregular time-series, dynamic systems modeling, continuous-time modeling)를 딥러닝의 영역으로 가져온 것이 메인이라 볼 수 있다.
+* 마지막으로, 논문과 달라진 실험 결과를 기반으로 해석을 해봤다. 내가 수행한 실험의 결과가 맞다고 가정한다. 우선, 거의 차이가 없는 소폭의 차이인 점을 인정하겠으나 이 부분을 주요하게 다루었다. Neural ODE 기반 모델은 ResNet보다 성능이 낮은 것으로 나타났다. 즉, <b>'Residual Networks를 무한에 가까운 레이어 수로 구성한 듯한 착각을 일으킴으로써, 성능의 개선을 유도한다.'</b> 이건 틀렸다고 볼 수 있다. 이를 더 강하게 주장하기 위해 Neural ODE 기반 네트워크 실험이 Block을 하나만 사용한 것에 기인하여 Residual Block을 하나로만 구성한 ResNet 실험을 수행했다. 그 결과, ResNet (1 Block)과 ODE-Net(RK, explicit)의 성능이 유사하며, 앞서 언급한 주장이 틀렸음을 뒷받침한다. 그래서, 만약에 어떤 연구를 수행하던 도중 성능 개선을 deeper nerual network로 이끌어내기 위해 Neural ODE를 사용하는 전략은 적절하지 않을 수도 있다. (물론, 이런 naive한 접근법도 벌써 10년이 넘었다.) 그래서, Neural ODE는 기존 문제에 대한 접근법의 대안을 제안하는 게 contribution은 아니다. 다만, Neural ODE를 통해서 기존에 풀지 못 했던 문제 (irregular time-series, dynamic systems modeling, continuous-time modeling)를 딥러닝의 영역으로 가져온 것이 메인이라 볼 수 있다.
 
     ➡️ <b>Neural ODE의 응용을 단순한 task에만 두지는 않을 것, 접근할 수 있는 영역의 확정성을 갖게 된 것.</b>
 
