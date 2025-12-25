@@ -11,7 +11,7 @@ def main():
     ode_epochs = np.array([i + 1 for i in range(0, len(ode_loss))])
     res_epochs = np.array([i + 1 for i in range(0, len(res_loss))])
 
-    plt.plot(ode_epochs, ode_loss, label='ODE-Net', color='blue')
+    plt.plot(ode_epochs, ode_loss, label='ODE-Net (Euler)', color='blue')
     plt.plot(res_epochs, res_loss, label='ResNet', color='red')
 
     plt.title(f"Loss Curve")
