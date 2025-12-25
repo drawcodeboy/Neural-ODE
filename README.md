@@ -12,7 +12,7 @@ conda activate node
 pip install -r requirements.txt
 ```
 
-# Experiement (25.12.25)
+# Experiment (25.12.25)
 * 논문의 3번 Section (Replacing Residual Networks with ODEs for supervised learning)을 재현하고자 했다.
 
 ![Section3expr](assets/result.png)
